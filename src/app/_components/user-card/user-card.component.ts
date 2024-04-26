@@ -1,5 +1,5 @@
 import { User } from './../../_models/user';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -11,4 +11,10 @@ import { Component, Input } from '@angular/core';
 export class UserCardComponent {
   @Input()
   user!: User;
+
+  @Output() userInfoEmiter = new EventEmitter<User>();
+
+  retornarDados(){
+    this.userInfoEmiter.emit(this.user);
+  }
 }
