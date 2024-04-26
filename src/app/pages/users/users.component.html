@@ -1,4 +1,8 @@
 <h1>Usuários</h1>
-<ul>
-  <li *ngFor="let item of nomes">{{ item }}</li>
+<ul class="list-button">
+  <li class="mb-2" *ngFor="let user of users">
+
+    <button [routerLink]="'/users/' + user"  class="btn btn-primary">{{ user }}</button>
+
+  </li>
 </ul>
