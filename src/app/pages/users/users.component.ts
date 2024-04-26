@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserCardComponent } from "../../_components/user-card/user-card.component";
 import { User } from '../../_models/user';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-users',
@@ -14,7 +15,10 @@ import { User } from '../../_models/user';
 export class UsersComponent {
  // users:string[] = ['Abda', 'Baasa', 'Cadmiel', 'Dafne'];
 
- userSelecionado: User | undefined;
+userSelecionado: User | undefined;
+userForm: FormGroup = new FormGroup({});
+
+constructor(private fb: FormBuilder){}
 
 users: User[] = [
   {
